@@ -7,7 +7,7 @@ define(function () {
 		Mirror: 1,
 		Edge  : 2
 	};
-	
+
 	const TextureFiltering = {
 		Point    : 0,
 		Bilinear : 1,
@@ -15,16 +15,18 @@ define(function () {
 	};
 
 	class Texture {
-		constructor () {
-			this.gl       = null;
-			this.image    = null;
-			this.texture  = null;
-			this.width    = 0;
-			this.height   = 0;
-			this.prepared = false;
+		constructor() {
+			this.gl        = null;
+			this.image     = null;
+			this.texture   = null;
+			this.width     = 0;
+			this.height    = 0;
+			this.mapping   = TextureMapping.Edge;
+			this.filtering = TextureFiltering.Point;
+			this.prepared  = false;
 		}
 
-		init (gl) {
+		init(gl) {
 			if (this.gl)
 				return;
 
@@ -32,12 +34,12 @@ define(function () {
 			this.texture = this.gl.createTexture();
 		}
 
-		fin () {
+		fin() {
 			if (!this.gl)
 				return;
 
 			this.gl.deleteTexture(this.texture);
-			
+
 			this.gl      = null;
 			this.image   = null;
 			this.texture = null;
@@ -46,7 +48,7 @@ define(function () {
 			this.prepare = false;
 		}
 
-		prepare (url) {
+		prepare(url) {
 			if (this.prepared)
 				return;
 
@@ -60,7 +62,7 @@ define(function () {
 
 				this.gl.bindTexture(this.gl.TEXTURE_2D, this.texture);
 				this.gl.texParameteri(this.gl.TEXTURE_2D, this.gl.TEXTURE_MAG_FILTER, );
-				
+
 				this.width   = this.image.width;
 				this.height  = this.image.height;
 				this.prepare = true;
