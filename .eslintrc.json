@@ -11,7 +11,8 @@
         "sourceType" : "module"
     },
     "rules": {
-        "indent": [
+        "no-mixed-spaces-and-tabs": "warn",
+        "indent"                  : [
             "error",
             "tab"
         ],
