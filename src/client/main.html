@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+
+	<script src='/lib/require.js' data-main='/main'></script>
+	
+	<link rel='stylesheet' type='text/css' href='/main.css'>
+	
+	<title>
+		TD
+	</title>
+</head>
+<body>
+	<div id="loginPanel" class="login">
+		<div class="outer">
+			<div class="inner">
+				<div class="main">
+					<input class="ui inputfield" id="username" placeholder="Username" type="text">
+					<input class="ui btn" type="button" value="Login" onclick="onLogin()">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="chattingPanel" class="chatting" style="display: none;">
+		<div class="outer">
+			<div class="inner">
+				<div class="main">
+					<input class="ui-long inputfield" id="msg" type="text">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<canvas id='canvas' class='fullsized'>
+		Your browser doesn't support the WebGL.
+	</canvas>
+</body>

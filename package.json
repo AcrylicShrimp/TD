@@ -1,13 +1,14 @@
 {
-  "name"        : "td",
-  "version"     : "1.0.0",
-  "description" : "WebGL-based 2D messenger application.",
-  "main"        : "src/server/server.js",
-  "author"      : "AcrylicShrimp",
-  "license"     : "Not-licensed",
+  "name": "td",
+  "version": "1.0.0",
+  "description": "WebGL-based 2D messenger application.",
+  "main": "src/server/server.js",
+  "author": "AcrylicShrimp",
+  "license": "Not-licensed",
   "dependencies": {
     "compression": "^1.7.3",
-    "express"    : "^4.16.3",
-    "socket.io"  : "^2.1.1"
+    "express": "^4.16.3",
+    "serve-static": "^1.13.2",
+    "socket.io": "^2.1.1"
   }
 }
